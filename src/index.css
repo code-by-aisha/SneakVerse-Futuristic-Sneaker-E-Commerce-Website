@@ -1,0 +1,203 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --neon-purple: #8b5cf6;
+  --neon-blue: #06b6d4;
+  --neon-pink: #ec4899;
+  --dark-bg: #0a0a0f;
+  --dark-card: #1a1a2e;
+  --dark-border: #2d2d42;
+  --text-light: #f8fafc;
+  --text-gray: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Neon Gradient Text */
+.neon-text {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: 
+    0 0 10px rgba(139, 92, 246, 0.3),
+    0 0 20px rgba(139, 92, 246, 0.2),
+    0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+.neon-glow-blue {
+  box-shadow: 
+    0 0 10px rgba(6, 182, 212, 0.3),
+    0 0 20px rgba(6, 182, 212, 0.2),
+    0 0 30px rgba(6, 182, 212, 0.1);
+}
+
+/* Button Styles */
+.btn-neon {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+.btn-neon:focus {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--neon-purple), var(--neon-blue));
+  border-radius: 10px;
+}
+
+/* Animation Classes */
+.bounce {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Tilt Effect */
+.tilt-card {
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+}
+
+/* Text Colors */
+.text-gray {
+  color: var(--text-gray) !important;
+}
+
+.text-light {
+  color: var(--text-light) !important;
+}
+
+/* Form Controls */
+.form-control {
+  background-color: var(--dark-card) !important;
+  border-color: var(--dark-border) !important;
+  color: var(--text-light) !important;
+}
+
+.form-control:focus {
+  background-color: var(--dark-card);
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+  color: var(--text-light);
+}
+
+.form-select {
+  background-color: var(--dark-card) !important;
+  border-color: var(--dark-border) !important;
+  color: var(--text-light) !important;
+}
+
+.form-select:focus {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25);
+}
+
+/* Table Styles */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text-light);
+  border-color: var(--dark-border);
+}
+
+.table th {
+  border-color: var(--dark-border);
+  color: var(--text-light);
+}
+
+.table td {
+  border-color: var(--dark-border);
+}
+
+/* Alert Styles */
+.alert {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+}
+
+.alert-warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section {
+    padding-top: 80px;
+    min-height: 80vh;
+  }
+}
