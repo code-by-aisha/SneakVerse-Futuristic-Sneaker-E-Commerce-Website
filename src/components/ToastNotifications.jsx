@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Toast, ToastContainer } from 'react-bootstrap'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../Context/CartContext'
 
 const ToastNotification = () => {
   const { showToast, toastMessage, hideToast } = useCart()
